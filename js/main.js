@@ -33,6 +33,11 @@ document.getElementById('enter').addEventListener('click',
         }
     });
 
+    document.getElementById('reset').addEventListener('click', 
+    function() {
+        document.getElementById('message').classList.add("invisible");
+    });
+
     document.getElementById('play').addEventListener('click', 
         function() {
             // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
