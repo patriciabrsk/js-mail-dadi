@@ -44,14 +44,16 @@ document.getElementById('enter').addEventListener('click',
             const userNumber = Math.floor((Math.random() * 6) + 1);
             const computerNumber = Math.floor((Math.random() * 6) + 1);
 
+            const result = document.getElementById('result');
+
             if (userNumber < computerNumber) {
                 document.getElementById('user').innerHTML = userNumber;
                 document.getElementById('computer').innerHTML = computerNumber;
-                document.getElementById('result').innerHTML = "&#128078; Game Over &#128078;";
+                result.innerHTML = "&#128078; Game Over &#128078;";
             } else if (userNumber > computerNumber) {
                 document.getElementById('user').innerHTML = userNumber;
                 document.getElementById('computer').innerHTML = computerNumber;
-                document.getElementById('result').innerHTML = "&#128079; You win! &#128079;";
+                result.innerHTML = "&#128079; You win! &#128079;";
             }
         });
 
