@@ -42,11 +42,11 @@ document.getElementById('enter').addEventListener('click',
             if (userNumber < computerNumber) {
                 document.getElementById('user').innerHTML = userNumber;
                 document.getElementById('computer').innerHTML = computerNumber;
-                document.getElementById('result').innerHTML = "Game Over";
+                document.getElementById('result').innerHTML = "&#128078; Game Over &#128078;";
             } else if (userNumber > computerNumber) {
                 document.getElementById('user').innerHTML = userNumber;
                 document.getElementById('computer').innerHTML = computerNumber;
-                document.getElementById('result').innerHTML = "You win!";
+                document.getElementById('result').innerHTML = "&#128079; You win! &#128079;";
             }
         });
 
