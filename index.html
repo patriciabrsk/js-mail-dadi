@@ -18,22 +18,26 @@
 </head>
 <body>
     <main>
-        <section id="email">
-            <div class="container-fluid">
-                <div class="row pt-5 justify-content-center">
-                    <div class="col-md-4 align-items-center">
-                        <div id="input-email">
-                            <input class="email form-control form-control-lg rounded-pill" type="email" placeholder="What is your email address?"></input>
-                            <button id="submit" class="btn btn-outline-light rounded-pill text-uppercase me-2"><i class="fas fa-paper-plane"></i></button>
-                        </div>
+        <div class="container-fluid">
+            <div class="row pt-5 justify-content-center">
+                <div class="col-md-6 d-flex flex-column align-items-center">
+                    <input class="email form-control form-control-lg rounded-pill" type="email" placeholder="What is your email address?" required>
+                    <div class="buttons">
+                        <button id="enter" class="text-center btn btn-outline-light mt-3 rounded-pill text-uppercase me-2"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <h1 id="message" class="text-danger mt-4 shadow p-3 mb-5 bg-body rounded-pill invisible"></h1>
+                </div>
+                <div id="dice-game" class="col-md-7 shadow p-3 bg-body mt-3 rounded-pill d-flex flex-column align-items-center">
+                    <h1 class="title text-uppercase ">DICE GAME</h1>
+                    <button id="play" class="btn btn-outline-dark mt-3 rounded-pill text-uppercase me-2">play!</button>
+                    <div class="result-wrapper mt-4">
+                        <h2 id="result" class="text-uppercase"></h2>
+                        <p id="user" class="text-center"></p>
+                        <p id="computer" class="text-center"></p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="dice-game">
-
-        </section>
+        </div>
     </main>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
