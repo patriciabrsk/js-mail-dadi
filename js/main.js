@@ -8,39 +8,51 @@ const emailsList = [
     'sixth@email.com',
 ];
 
+// Click event for enter email button
 document.getElementById('enter').addEventListener('click',
     function() {
+        // event.preventDefault();
 
-        let notListed = "Email is not listed!";
-        let welcome = "Welcome!"
-        let message = document.getElementById('message');
-
-        // Chiedi all’utente la sua email
+         // Get email input from user
         const inputEmail = document.querySelector('.email').value;
 
-        // controlla che sia nella lista di chi può accedere,
-        // for
-        for (let i = 0; i < emailsList.length; i++) {
-            if (emailsList[i] == inputEmail) {
-                message.innerHTML = welcome;
-                message.classList.add('text-success');
-            } else {
-                message.innerHTML = notListed;
-                // message.classList.remove('text-success');
-                message.classList.add('text-danger');
-            }
-        }
-    });
+        let message = document.getElementById('message');  
+        let listed = false;
 
+        // Check if user input value is included in emailsList array
+        for (let i = 0; !listed && i < emailsList.length; i++) {
+            if (emailsList[i] === inputEmail) {
+                listed = true;
+                console.log(message);
+            } 
+        }
+        if (listed) {
+            message.innerHTML = "Welcome";
+            message.classList.add('text-success');
+        } else {
+            message.innerHTML = '<i class="fas fa-exclamation-triangle"></i>' + " Email is not listed!";
+            message.classList.add('text-danger');
+        }
+    }
+);
+
+    // Click event for reset email button
     document.getElementById('reset').addEventListener('click', 
     function() {
+        document.querySelector('.email').value = '';
         document.getElementById('message').classList.add("invisible");
     });
 
+    // Dice Game 
+    // Click event for play button
     document.getElementById('play').addEventListener('click', 
-        function() {
-            // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+        function () {
+            /* Generate a random number for the user from 1 to 6, 
+            storing it in a variable called userNumber */
             const userNumber = Math.floor((Math.random() * 6) + 1);
+
+            /* Generate a random number for the computer from 1 to 6, 
+            storing it in a variable called computerNumber */
             const computerNumber = Math.floor((Math.random() * 6) + 1);
 
             const result = document.getElementById('result');
