@@ -1,4 +1,4 @@
-// Array of emails
+// Create array of emails
 const emailsList = [
     'first@email.com', 
     'second@email.com', 
@@ -11,7 +11,6 @@ const emailsList = [
 // Click event for enter email button
 document.getElementById('enter').addEventListener('click',
     function() {
-        // event.preventDefault();
 
          // Get email input from user
         const inputEmail = document.querySelector('.email').value;
@@ -21,16 +20,22 @@ document.getElementById('enter').addEventListener('click',
 
         // Check if user input value is included in emailsList array
         for (let i = 0; !listed && i < emailsList.length; i++) {
-            if (emailsList[i] === inputEmail) {
-                listed = true;
-                console.log(message);
+            if (emailsList[i] == inputEmail) {
+                listed = true; // Set the flag, email is listed
             } 
         }
+
+        // When the email inserted by the user is listed, print "Welcome" message
         if (listed) {
             message.innerHTML = "Welcome";
-            message.classList.add('text-success');
+            message.classList.remove('text-danger');
+            message.classList.add('my-txt-green');
+
+        // When the email inserted by the user is not listed, 
+        // print "Email is not listed!" message
         } else {
             message.innerHTML = '<i class="fas fa-exclamation-triangle"></i>' + " Email is not listed!";
+            message.classList.remove('my-txt-green');
             message.classList.add('text-danger');
         }
     }
