@@ -65,11 +65,15 @@ document.getElementById('enter').addEventListener('click',
             if (userNumber < computerNumber) {
                 document.getElementById('user').innerHTML = userNumber;
                 document.getElementById('computer').innerHTML = computerNumber;
-                result.innerHTML = "&#128078; Game Over &#128078;";
+                result.innerHTML = "&#128078; Try again &#128078;";
+                result.classList.remove('text-success');
+                result.classList.add('text-danger');
             } else if (userNumber > computerNumber) {
                 document.getElementById('user').innerHTML = userNumber;
                 document.getElementById('computer').innerHTML = computerNumber;
                 result.innerHTML = "&#128079; You win! &#128079;";
+                result.classList.remove('text-danger');
+                result.classList.add('text-success');
             }
         });
 
